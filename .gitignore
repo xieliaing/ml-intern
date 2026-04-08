@@ -52,6 +52,9 @@ frontend/yarn-error.log*
 # Docker
 .docker/
 
+# Eval (stale)
+eval/
+
 # Project-specific
 session_logs/
 /logs
