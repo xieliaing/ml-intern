@@ -1034,6 +1034,8 @@ def cli():
     _logging.getLogger("asyncio").setLevel(_logging.CRITICAL)
     # Suppress litellm pydantic deprecation warnings
     warnings.filterwarnings("ignore", category=DeprecationWarning, module="litellm")
+    # Suppress whoosh invalid escape sequence warnings (third-party, unfixed upstream)
+    warnings.filterwarnings("ignore", category=SyntaxWarning, module="whoosh")
 
     parser = argparse.ArgumentParser(description="Hugging Face Agent CLI")
     parser.add_argument("prompt", nargs="?", default=None, help="Run headlessly with this prompt")
